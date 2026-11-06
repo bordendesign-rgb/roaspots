@@ -1,0 +1,21 @@
+{
+  "name": "RoaSpots | Island Explorer Directory",
+  "short_name": "RoaSpots",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f0f9ff",
+  "theme_color": "#0284c7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

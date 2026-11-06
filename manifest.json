@@ -1,0 +1,24 @@
+{
+  "name": "RoaSpots | Island Explorer Directory",
+  "short_name": "RoaSpots",
+  "description": "Mobile-first PWA directory for exploring beaches, spots, food, and tours in Roatán.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0284c7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

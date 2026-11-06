@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>RoaSpots | Island Explorer Directory</title>
+
+  <!-- Home Screen Icon & Manifest (Moved to top for iOS/Android detection) -->
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Your CSS stylesheet inside the css folder -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="brand-container">
+      <img src="logo.png" alt="RoaSpots Logo" class="app-logo">
+      <h1>RoaSpots</h1>
+    </div>
+  </header>
+
+  <!-- Search Bar Container -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search spots, beaches, food, tours..." aria-label="Search spots">
+  </div>
+
+  <!-- Get Listed WhatsApp Banner -->
+  <div class="promo-banner">
+    <div class="promo-text">
+      <span>Want your spot listed here?</span>
+    </div>
+    <a href="https://wa.me/50493400993?text=Hi%2C%20I%20would%20like%20to%20get%20my%20business%20listed%20on%20RoaSpots!" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="btn-whatsapp">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+        <path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.486 1.332 5.002L2 22l5.132-1.347a9.948 9.948 0 0 0 4.899 1.28h.004c5.517 0 9.993-4.476 9.993-9.993A9.95 9.95 0 0 0 12.031 2zm0 18.291h-.003a8.272 8.272 0 0 1-4.218-1.162l-.302-.18-3.136.822.836-3.057-.197-.314a8.276 8.276 0 0 1-1.272-4.407c0-4.57 3.718-8.288 8.29-8.288 2.214 0 4.295.863 5.861 2.43 1.566 1.567 2.428 3.648 2.427 5.862 0 4.571-3.718 8.289-8.289 8.289zm4.542-6.208c-.249-.125-1.472-.727-1.7-.81-.228-.083-.394-.125-.56.125-.166.249-.644.81-.789.976-.145.166-.291.187-.54.062-.249-.125-1.053-.388-2.006-1.238-.742-.662-1.243-1.48-1.388-1.729-.145-.249-.015-.384.109-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.56-1.349-.768-1.847-.203-.487-.41-.421-.56-.428-.145-.008-.311-.008-.477-.008s-.436.062-.664.312c-.228.249-.872.851-.872 2.076 0 1.225.892 2.408 1.016 2.574.125.166 1.756 2.682 4.254 3.761.594.257 1.058.41 1.42.525.597.19 1.141.163 1.571.099.48-.071 1.472-.602 1.68-1.183.208-.581.208-1.08.145-1.183-.062-.104-.228-.187-.477-.312z"/>
+      </svg>
+      Get Listed
+    </a>
+  </div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Filter Buttons -->
+  <nav class="filter-bar">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="beach">Beaches</button>
+    <button class="filter-btn" data-category="spot">Spots</button>
+    <button class="filter-btn" data-category="food">Food</button>
+    <button class="filter-btn" data-category="tour">Tours</button>
+    <button class="filter-btn" data-category="service">Services</button>
+  </nav>
+
+  <!-- Directory Cards List -->
+  <main class="directory-list" id="directoryList"></main>
+
+  <!-- Floating Install App Prompt Banner -->
+  <div id="installBanner" class="install-banner" style="display: none;">
+    <div class="install-text">
+      <strong>Install RoaSpots</strong>
+      <span>Save app to home screen for 1-tap island access</span>
+    </div>
+    <button id="btnInstall" class="btn-install">Install</button>
+    <button id="btnCloseBanner" class="btn-close-banner" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <!-- Your JS files in root with cache-busting versioning -->
+  <script src="spots.js?v=2"></script>
+  <script src="app.js?v=2"></script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('Service Worker registered!', reg))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    });
+  }
+  </script>
+</body>
+</html>
