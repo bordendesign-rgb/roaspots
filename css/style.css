@@ -257,7 +257,9 @@ body {
 
 /* Specific styling for action buttons inside contact info */
 .spot-contact-info .btn-call, 
-.spot-contact-info .btn-whatsapp {
+.spot-contact-info .btn-whatsapp,
+.spot-contact-info .btn-facebook,
+.spot-contact-info .btn-instagram {
   display: inline-flex;
   width: auto;
   flex: 0 0 auto;
@@ -266,6 +268,8 @@ body {
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 700;
+  align-items: center;
+  gap: 4px;
 }
 
 .spot-contact-info .btn-call {
@@ -275,6 +279,16 @@ body {
 
 .spot-contact-info .btn-whatsapp {
   background-color: #25d366;
+  color: #ffffff;
+}
+
+.spot-contact-info .btn-facebook {
+  background-color: #1877f2;
+  color: #ffffff;
+}
+
+.spot-contact-info .btn-instagram {
+  background-color: #e4405f;
   color: #ffffff;
 }
 
