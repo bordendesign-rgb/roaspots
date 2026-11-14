@@ -113,10 +113,10 @@ function renderSpots() {
         contactHTML += `<a href="https://wa.me/${rawDigits}" target="_blank" rel="noopener noreferrer" class="contact-link btn-whatsapp">💬 WhatsApp</a>`;
       }
       if (spot.facebook) {
-        contactHTML += `<a href="${spot.facebook}" target="_blank" rel="noopener noreferrer" class="contact-link btn-social btn-facebook" style="background: #1877f2; color: white; display: inline-flex; align-items: center; gap: 4px;">Facebook</a>`;
+        contactHTML += `<a href="${spot.facebook}" target="_blank" rel="noopener noreferrer" class="contact-link" style="background: #1877f2; color: white;">📘 Facebook</a>`;
       }
       if (spot.instagram) {
-        contactHTML += `<a href="${spot.instagram}" target="_blank" rel="noopener noreferrer" class="contact-link btn-social btn-instagram" style="background: #e4405f; color: white; display: inline-flex; align-items: center; gap: 4px;">Instagram</a>`;
+        contactHTML += `<a href="${spot.instagram}" target="_blank" rel="noopener noreferrer" class="contact-link" style="background: #e4405f; color: white;">📸 Instagram</a>`;
       }
       if (spot.email) {
         contactHTML += `<a href="mailto:${spot.email}" class="contact-link">✉️ ${spot.email}</a>`;
