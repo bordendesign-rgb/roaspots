@@ -103,14 +103,20 @@ function renderSpots() {
     marker.bindPopup(`<b>${spot.name}</b><br>${spot.description}`);
     markers[spot.id] = marker;
 
-    // Build contact info HTML conditionally with Call + WhatsApp side-by-side
+    // Build contact info HTML conditionally with Call, WhatsApp, Socials, and Email grouped together
     let contactHTML = '';
-    if (spot.phone || spot.email) {
+    if (spot.phone || spot.email || spot.facebook || spot.instagram) {
       contactHTML = '<div class="spot-contact-info">';
       if (spot.phone) {
         const rawDigits = spot.phone.replace(/\D/g, '');
         contactHTML += `<a href="tel:+${rawDigits}" class="contact-link btn-call">📞 Call</a>`;
         contactHTML += `<a href="https://wa.me/${rawDigits}" target="_blank" rel="noopener noreferrer" class="contact-link btn-whatsapp">💬 WhatsApp</a>`;
+      }
+      if (spot.facebook) {
+        contactHTML += `<a href="${spot.facebook}" target="_blank" rel="noopener noreferrer" class="contact-link btn-social btn-facebook" style="background: #1877f2; color: white; display: inline-flex; align-items: center; gap: 4px;">Facebook</a>`;
+      }
+      if (spot.instagram) {
+        contactHTML += `<a href="${spot.instagram}" target="_blank" rel="noopener noreferrer" class="contact-link btn-social btn-instagram" style="background: #e4405f; color: white; display: inline-flex; align-items: center; gap: 4px;">Instagram</a>`;
       }
       if (spot.email) {
         contactHTML += `<a href="mailto:${spot.email}" class="contact-link">✉️ ${spot.email}</a>`;
@@ -122,19 +128,6 @@ function renderSpots() {
     const websiteBtnHTML = spot.website 
       ? `<a href="${spot.website}" target="_blank" rel="noopener noreferrer" class="btn-website">Website</a>` 
       : '';
-
-    // Build Social Media buttons conditionally (Facebook & Instagram)
-    let socialBtnsHTML = '';
-    if (spot.facebook || spot.instagram) {
-      socialBtnsHTML = '<div class="spot-social-links" style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">';
-      if (spot.facebook) {
-        socialBtnsHTML += `<a href="${spot.facebook}" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" style="font-size: 0.85rem; padding: 4px 10px; background: #1877f2; color: white; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Facebook</a>`;
-      }
-      if (spot.instagram) {
-        socialBtnsHTML += `<a href="${spot.instagram}" target="_blank" rel="noopener noreferrer" class="btn-social btn-instagram" style="font-size: 0.85rem; padding: 4px 10px; background: #e4405f; color: white; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Instagram</a>`;
-      }
-      socialBtnsHTML += '</div>';
-    }
 
     // Build Featured Badge conditionally
     const featuredBadgeHTML = spot.featured 
@@ -164,7 +157,6 @@ function renderSpots() {
           <a href="${spot.directions}" target="_blank" rel="noopener noreferrer" class="btn-directions">Directions</a>
           ${websiteBtnHTML}
         </div>
-        ${socialBtnsHTML}
       </div>
     `;
 
