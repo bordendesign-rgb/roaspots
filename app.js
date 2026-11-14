@@ -4,7 +4,7 @@ const map = L.map('map').setView([16.3500, -86.4500], 11);
 // Add OpenStreetMap tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
-  attribution: '&copy; OpenStreetMap contributors'
+  attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
 // Storage for active map markers
@@ -123,6 +123,19 @@ function renderSpots() {
       ? `<a href="${spot.website}" target="_blank" rel="noopener noreferrer" class="btn-website">Website</a>` 
       : '';
 
+    // Build Social Media buttons conditionally (Facebook & Instagram)
+    let socialBtnsHTML = '';
+    if (spot.facebook || spot.instagram) {
+      socialBtnsHTML = '<div class="spot-social-links" style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">';
+      if (spot.facebook) {
+        socialBtnsHTML += `<a href="${spot.facebook}" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" style="font-size: 0.85rem; padding: 4px 10px; background: #1877f2; color: white; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Facebook</a>`;
+      }
+      if (spot.instagram) {
+        socialBtnsHTML += `<a href="${spot.instagram}" target="_blank" rel="noopener noreferrer" class="btn-social btn-instagram" style="font-size: 0.85rem; padding: 4px 10px; background: #e4405f; color: white; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Instagram</a>`;
+      }
+      socialBtnsHTML += '</div>';
+    }
+
     // Build Featured Badge conditionally
     const featuredBadgeHTML = spot.featured 
       ? `<span class="featured-badge" style="color: #d97706; font-weight: 800; margin-left: auto;">★ FEATURED</span>` 
@@ -151,6 +164,7 @@ function renderSpots() {
           <a href="${spot.directions}" target="_blank" rel="noopener noreferrer" class="btn-directions">Directions</a>
           ${websiteBtnHTML}
         </div>
+        ${socialBtnsHTML}
       </div>
     `;
 

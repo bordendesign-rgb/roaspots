@@ -26,7 +26,9 @@ const spots = [
     phoneLink: "tel:+50493400993",
     whatsapp: "https://wa.me/50493400993",
     email: "info@roatanislandstyletours.com",
-    website: "https://roatanislandstyletours.com/"
+    website: "https://roatanislandstyletours.com/",
+    facebook: "https://www.facebook.com/roatanislandstyletours",
+    instagram: "https://www.instagram.com/roatanislandstyletours/"
   },
   {
     id: 3,
@@ -43,7 +45,9 @@ const spots = [
     phoneLink: "tel:+50499751227",
     whatsapp: "https://wa.me/50499751227",
     email: "roatanreeladdiction@yahoo.com",
-    website: "https://www.roatanreeladdiction.com/"
+    website: "https://www.roatanreeladdiction.com/",
+    facebook: "https://www.facebook.com/roatanreeladdiction",
+    instagram: "https://www.instagram.com/roatanreeladdiction/"
   },
   {
     id: 4,
@@ -82,7 +86,9 @@ const spots = [
     phone: "(504) 3283-9482",
     phoneLink: "tel:+50432839482",
     whatsapp: "https://wa.me/50432839482",
-    directions: "https://www.google.com/maps/dir/?api=1&destination=16.3870,-86.3700"
+    directions: "https://www.google.com/maps/dir/?api=1&destination=16.3870,-86.3700",
+    facebook: "",
+    instagram: ""
   },
   {
     id: 7,
@@ -111,7 +117,9 @@ const spots = [
     phoneLink: "tel:+50432839537",
     whatsapp: "https://wa.me/50432839537",
     email: "eastenderroatan@gmail.com",
-    website: "https://www.eastenderroatan.com/"
+    website: "https://www.eastenderroatan.com/",
+    facebook: "https://www.facebook.com/toursandcharters",
+    instagram: "https://www.instagram.com/eastendertours_roatan/"
   },
   {
     id: 9,
@@ -127,7 +135,9 @@ const spots = [
     phone: "(504) 3204-4668",
     phoneLink: "tel:+50432044668",
     whatsapp: "https://wa.me/50432044668",
-    email: "atinsuranceroatan@gmail.com"
+    email: "atinsuranceroatan@gmail.com",
+    facebook: "https://www.facebook.com/profile.php?id=100063579250538",
+    instagram: "https://www.instagram.com/atinsuranceroatan/"
   },
   {
     id: 10,
@@ -139,6 +149,6 @@ const spots = [
     lng: -86.3950,
     image: "theflags-santos-guardiola.JPG",
     description: "A must-visit scenic viewpoint in Santos Guardiola where both sides of the island can be seen from a single breathtaking vantage point. Featuring a striking display of flags and a dedicated lookout area, it's the ultimate roadside stop for locals and travelers looking to stretch their legs, soak in the panoramic island views, and snap unforgettable photos.",
-    directions: "https://www.google.com/maps/dir/?api=1&destination=16.3923,-86.3950",
+    directions: "https://www.google.com/maps/dir/?api=1&destination=16.3923,-86.3950"
   }
 ];
