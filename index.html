@@ -3,11 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>RoaSpots | Island Explorer Directory</title>
+  <title>RoaSpots | Roatán Interactive Map, Tours, Beaches & Local Directory</title>
+
+  <!-- Primary SEO Meta Tags -->
+  <meta name="description" content="Explore Roatán, Bay Islands with RoaSpots. Interactive island map and directory featuring local boat tours, beaches, restaurants, hidden spots, and trusted services with 1-tap WhatsApp and directions.">
+  <meta name="keywords" content="Roatan directory, Roatan map, Roatan tours, Roatan beaches, things to do in Roatan, Bay Islands Honduras, Roatan boat charters, Roatan restaurants, Santos Guardiola, West Bay, West End, Oak Ridge">
+  <meta name="author" content="Borden Design">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://roaspots.com/">
+
+  <!-- Local Geo-Targeting (Roatán, Bay Islands, Honduras) -->
+  <meta name="geo.region" content="HN-IB">
+  <meta name="geo.placename" content="Roatán, Bay Islands, Honduras">
+  <meta name="geo.position" content="16.3500;-86.4500">
+  <meta name="ICBM" content="16.3500, -86.4500">
+
+  <!-- Open Graph / Facebook & WhatsApp Link Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RoaSpots">
+  <meta property="og:title" content="RoaSpots | Roatán Interactive Map & Local Directory">
+  <meta property="og:description" content="Find the best beaches, boat tours, local food, and trusted services on Roatán with 1-tap WhatsApp, Call, Social, and GPS Directions.">
+  <meta property="og:url" content="https://roaspots.com/">
+  <meta property="og:image" content="https://roaspots.com/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RoaSpots | Roatán Interactive Map & Local Directory">
+  <meta name="twitter:description" content="Explore Roatán's best beaches, boat charters, food, and services with 1-tap WhatsApp and GPS directions.">
+  <meta name="twitter:image" content="https://roaspots.com/logo.png">
+
+  <!-- PWA Theme & Mobile App Meta -->
+  <meta name="theme-color" content="#0284c7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="RoaSpots">
 
   <!-- Home Screen Icon & Manifest (Moved to top for iOS/Android detection) -->
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
   <link rel="manifest" href="manifest.json">
+
+  <!-- Structured Data (JSON-LD for Google Search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "RoaSpots",
+    "url": "https://roaspots.com/",
+    "image": "https://roaspots.com/logo.png",
+    "description": "Interactive map and local business directory for Roatán, Bay Islands, Honduras featuring beaches, tours, restaurants, and services.",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "All",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Roatán, Bay Islands, Honduras",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 16.3500,
+        "longitude": -86.4500
+      }
+    }
+  }
+  </script>
 
   <!-- Leaflet Map CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -68,7 +125,7 @@
       <span>Save app to home screen for 1-tap island access</span>
     </div>
     <button id="btnInstall" class="btn-install">Install</button>
-    <button id="btnCloseBanner" class="btn-close-banner" aria-label="Close">&times;</button>
+    <button id="btnCloseBanner" class="btn-close-banner" aria-label="Close">×</button>
   </div>
 
   <!-- Leaflet Map JS -->
