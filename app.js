@@ -77,9 +77,13 @@ function renderSpots() {
   // Clear existing markers from map
   Object.values(markers).forEach(marker => map.removeLayer(marker));
 
-  // 1. Filter spots by active state, category, and search query
+  // Current date in YYYY-MM-DD format for trial expiration checks
+  const today = new Date().toISOString().split('T')[0];
+
+  // 1. Filter spots by active state, expiration date, category, and search query
   const filteredSpots = spots.filter(spot => {
-    const isActive = spot.active !== false; // Default to active if undefined
+    const isNotExpired = !spot.expiresAt || spot.expiresAt >= today;
+    const isActive = spot.active !== false && isNotExpired; // Default to active if undefined
     const matchesCategory = currentCategory === 'all' || spot.category === currentCategory;
     const matchesSearch = spot.name.toLowerCase().includes(currentSearchQuery) || 
                           spot.description.toLowerCase().includes(currentSearchQuery);
